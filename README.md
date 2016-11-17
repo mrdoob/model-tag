@@ -1,7 +1,7 @@
-model-tag
+&lt;model-tag&gt;
 ========
 
-#### Custom Elements for easily displaying 3D models. ####
+#### Custom HTML Elements for displaying 3D models. ####
 
 Demo: https://mrdoob.github.io/model-tag/ (Browser with `Custom Elements` support required)
 
