@@ -18,7 +18,7 @@ Add this in your page's `<head>`.
 Use `<model-gltf>` to load and display your file.
 
 ```html
-<model-gltf src= src="js/model-gltf.js"/>
+<model-gltf src="example.gltf"/>
 ```
 
 Same thing with `model-obj`, `model-stl`, `model-three`, ...
