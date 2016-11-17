@@ -16,7 +16,7 @@
 				background-color: #222;
 				color: white;
 			}
-			div {
+			div.element {
 				display: inline-block;
 				margin-bottom: 6px;
 			}
@@ -27,22 +27,30 @@
 		<script src="dist/model-three.js"></script>
 	</head>
 	<body>
+		<script>
+			if ( 'customElements' in window === false ) {
+				var div = document.createElement( 'div' );
+				div.innerHTML = 'Your browser doesn\'t support <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Custom_Elements">Custom Elements</a> :(';
+				div.style.cssText = 'padding:20px;color:white;background-color:red;font-size:20px;text-align:center';
+				document.body.appendChild( div );
+			}
+		</script>
 		<h1>&lt;model-tag&gt; Custom HTML Elements for displaying 3D models.</h1>
 		<h2>GitHub: <a href="https://github.com/mrdoob/model-tag">https://github.com/mrdoob/model-tag</a></h2>
 		<br />
-		<div>
+		<div class="element">
 			<code>&lt;model-gltf src="models/gltf/VC.gltf"/&gt;</code>
 			<model-gltf src="models/gltf/VC.gltf"/>
 		</div>
-		<div>
+		<div class="element">
 			<code>&lt;model-obj src="models/obj/LeePerrySmith.obj"/&gt;</code>
 			<model-obj src="models/obj/LeePerrySmith.obj"/>
 		</div>
-		<div>
+		<div class="element">
 			<code>&lt;model-stl src="models/stl/slotted_disk.stl"/&gt;</code>
 			<model-stl src="models/stl/slotted_disk.stl"/>
 		</div>
-		<div>
+		<div class="element">
 			<code>&lt;model-three src="models/three/scene.json"/&gt;</code>
 			<model-three src="models/three/scene.json"/>
 		</div>
