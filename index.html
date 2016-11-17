@@ -5,54 +5,79 @@
 		<style>
 			body {
 				font-family: monospace;
+				text-align: center;
 			}
-			h1, h2 {
+			h1 {
+				font-size: 24px;
 				font-weight: normal;
 			}
-			code {
-				position: absolute;
-				padding: 8px;
-				font-size: 12px;
-				background-color: #222;
-				color: white;
+			h2 {
+				font-size: 18px;
+				font-weight: normal;
 			}
-			div.element {
-				display: inline-block;
-				margin-bottom: 6px;
+			a:visited {
+				color: blue;
+			}
+			pre {
+				font-size: 13px;
+
+				margin: 0px !important;
+				width: 400px;
+
+				vertical-align: top;
+			}
+			pre code {
+				tab-size: 2 !important;
+			}
+			div.example {
+				display: flex;
+				justify-content: center;
+				margin-bottom: 24px;
 			}
 		</style>
-		<script src="dist/model-gltf.js"></script>
-		<script src="dist/model-obj.js"></script>
-		<script src="dist/model-stl.js"></script>
-		<script src="dist/model-three.js"></script>
+		<link rel="stylesheet" href="examples/js/prism.css" data-noprefix />
+		<script src="examples/js/prism.js"></script>
 	</head>
 	<body>
 		<script>
 			if ( 'customElements' in window === false ) {
 				var div = document.createElement( 'div' );
 				div.innerHTML = 'Your browser doesn\'t support <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Custom_Elements">Custom Elements</a> :(';
-				div.style.cssText = 'padding:20px;color:white;background-color:red;font-size:20px;text-align:center';
+				div.style.cssText = 'font-size:20px;color:white;background-color:red;padding:20px;margin-bottom:30px;';
 				document.body.appendChild( div );
 			}
 		</script>
-		<h1>&lt;model-tag&gt; Custom HTML Elements for displaying 3D models.</h1>
-		<h2>GitHub: <a href="https://github.com/mrdoob/model-tag">https://github.com/mrdoob/model-tag</a></h2>
+		<h1>&lt;model-tag&gt; Custom HTML Elements for displaying 3D models</h1>
+		<h2><a href="https://github.com/mrdoob/model-tag">https://github.com/mrdoob/model-tag</a></h2>
 		<br />
-		<div class="element">
-			<code>&lt;model-gltf src="models/gltf/VC.gltf"/&gt;</code>
-			<model-gltf src="models/gltf/VC.gltf"/>
+
+		<h2>&lt;model-gltf&gt;</h2>
+
+		<div class="example">
+			<pre data-src="examples/model-gltf.html"></pre>
+			<iframe src="examples/model-gltf.html" marginwidth="0" marginheight="0" scrolling="no" style="border:0;width:400px;height:400px;"></iframe>
 		</div>
-		<div class="element">
-			<code>&lt;model-obj src="models/obj/LeePerrySmith.obj"/&gt;</code>
-			<model-obj src="models/obj/LeePerrySmith.obj"/>
+
+		<h2>&lt;model-obj&gt;</h2>
+
+		<div class="example">
+			<pre data-src="examples/model-obj.html"></pre>
+			<iframe src="examples/model-obj.html" marginwidth="0" marginheight="0" scrolling="no" style="border:0;width:400px;height:400px;"></iframe>
 		</div>
-		<div class="element">
-			<code>&lt;model-stl src="models/stl/slotted_disk.stl"/&gt;</code>
-			<model-stl src="models/stl/slotted_disk.stl"/>
+
+		<h2>&lt;model-stl&gt;</h2>
+
+		<div class="example">
+			<pre data-src="examples/model-stl.html"></pre>
+			<iframe src="examples/model-stl.html" marginwidth="0" marginheight="0" scrolling="no" style="border:0;width:400px;height:400px;"></iframe>
 		</div>
-		<div class="element">
-			<code>&lt;model-three src="models/three/scene.json"/&gt;</code>
-			<model-three src="models/three/scene.json"/>
+
+		<h2>&lt;model-three&gt;</h2>
+
+		<div class="example">
+			<pre data-src="examples/model-three.html"></pre>
+			<iframe src="examples/model-three.html" marginwidth="0" marginheight="0" scrolling="no" style="border:0;width:400px;height:400px;"></iframe>
 		</div>
+
 	</body>
 </html>
