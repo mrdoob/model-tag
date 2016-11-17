@@ -5,8 +5,6 @@
 
 Demo: https://mrdoob.github.io/model-tag/ (Browser with `Custom Elements` support required)
 
-![Snapshot 1](screenshot.png)
-
 ### Usage ###
 
 Add this in your page's `<head>`.
