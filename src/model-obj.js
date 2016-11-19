@@ -3,7 +3,7 @@
  */
 
 import { ModelElement } from './model.js';
-import { Box3, DirectionalLight } from './three.modules.js';
+import { Box3, DirectionalLight, HemisphereLight } from './three.modules.js';
 import { OBJLoader } from './loaders/OBJLoader.js';
 
 class ObjModelElement extends ModelElement {
@@ -14,12 +14,12 @@ class ObjModelElement extends ModelElement {
 
 		var scope = this;
 
-		var light = new DirectionalLight();
-		light.position.set( 1, 1, 1 );
+		var light = new HemisphereLight( 0xaaaaff, 0x806060, 0.2 );
+		light.position.set( 0, 1, 0 );
 		scope.scene.add( light );
 
-		var light = new DirectionalLight( 0xffffff, 0.5 );
-		light.position.set( - 1, - 1, - 1 );
+		var light = new DirectionalLight( 0xffffff, 0.8 );
+		light.position.set( 1, 1, 1 );
 		scope.scene.add( light );
 
 		scope.cameraDistance = 1;
