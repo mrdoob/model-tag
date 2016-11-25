@@ -3,7 +3,7 @@
  */
 
 import { ModelElement } from './model.js';
-import { Box3, DirectionalLight, HemisphereLight } from './three.modules.js';
+import { Box3, DirectionalLight, HemisphereLight, Vector3 } from './three.modules.js';
 import { OBJLoader } from './loaders/OBJLoader.js';
 
 class ObjModelElement extends ModelElement {
@@ -23,17 +23,19 @@ class ObjModelElement extends ModelElement {
 		scope.scene.add( light );
 
 		scope.cameraDistance = 1;
+		scope.cameraCenter = new Vector3();
 
 		function animate( time ) {
 
 			time /= 2000;
 
-			var distance = scope.cameraDistance / 2;
+			var distance = scope.cameraDistance / 1.25;
 
 			scope.camera.position.x = Math.sin( time ) * distance;
-			scope.camera.position.y = distance / 3;
+			scope.camera.position.y = distance / 5;
 			scope.camera.position.z = Math.cos( time ) * distance;
-			scope.camera.lookAt( scope.scene.position );
+			scope.camera.position.add( scope.cameraCenter );
+			scope.camera.lookAt( scope.cameraCenter );
 
 			scope.renderer.render( scope.scene, scope.camera );
 
@@ -55,7 +57,9 @@ class ObjModelElement extends ModelElement {
 
 			new OBJLoader().load( newValue, function ( object ) {
 
-				scope.cameraDistance = new Box3().setFromObject( object ).getSize().length();
+				var box = new Box3().setFromObject( object );
+				scope.cameraDistance = box.getSize().length();
+				scope.cameraCenter = box.getCenter();
 				scope.scene.add( object );
 
 			} );
