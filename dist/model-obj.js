@@ -40810,7 +40810,7 @@ class ObjModelElement extends ModelElement {
 
 		var scope = this;
 
-		var light = new HemisphereLight( 0xaaaaff, 0x804040, 0.2 );
+		var light = new HemisphereLight( 0xaaaaff, 0x806060, 0.2 );
 		light.position.set( 0, 1, 0 );
 		scope.scene.add( light );
 
@@ -40819,17 +40819,19 @@ class ObjModelElement extends ModelElement {
 		scope.scene.add( light );
 
 		scope.cameraDistance = 1;
+		scope.cameraCenter = new Vector3();
 
 		function animate( time ) {
 
 			time /= 2000;
 
-			var distance = scope.cameraDistance / 2;
+			var distance = scope.cameraDistance / 1.25;
 
 			scope.camera.position.x = Math.sin( time ) * distance;
-			scope.camera.position.y = distance / 3;
+			scope.camera.position.y = distance / 5;
 			scope.camera.position.z = Math.cos( time ) * distance;
-			scope.camera.lookAt( scope.scene.position );
+			scope.camera.position.add( scope.cameraCenter );
+			scope.camera.lookAt( scope.cameraCenter );
 
 			scope.renderer.render( scope.scene, scope.camera );
 
@@ -40851,7 +40853,9 @@ class ObjModelElement extends ModelElement {
 
 			new OBJLoader().load( newValue, function ( object ) {
 
-				scope.cameraDistance = new Box3().setFromObject( object ).getSize().length();
+				var box = new Box3().setFromObject( object );
+				scope.cameraDistance = box.getSize().length();
+				scope.cameraCenter = box.getCenter();
 				scope.scene.add( object );
 
 			} );
