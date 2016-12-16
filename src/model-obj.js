@@ -3,8 +3,8 @@
  */
 
 import { ModelElement } from './model.js';
-import { Box3, DirectionalLight, HemisphereLight, Vector3 } from './three.modules.js';
 import { OBJLoader } from './loaders/OBJLoader.js';
+import { Box3, DirectionalLight, HemisphereLight, Vector3 } from '../node_modules/three/build/three.module.js';
 
 class ObjModelElement extends ModelElement {
 

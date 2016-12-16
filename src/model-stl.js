@@ -3,8 +3,8 @@
  */
 
 import { ModelElement } from './model.js';
-import { Box3, DirectionalLight, HemisphereLight, Mesh, MeshPhongMaterial, Vector3 } from './three.modules.js';
 import { STLLoader } from './loaders/STLLoader.js';
+import { Box3, DirectionalLight, HemisphereLight, Mesh, MeshPhongMaterial, Vector3 } from '../node_modules/three/build/three.module.js';
 
 class StlModelElement extends ModelElement {
 

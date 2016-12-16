@@ -2,7 +2,7 @@
  * @author mrdoob / http://mrdoob.com/
  */
 
-import * as THREE from '../three.modules.js';
+import * as THREE from '../../node_modules/three/build/three.module.js';
 
 var OBJLoader = function ( manager ) {
 

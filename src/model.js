@@ -2,7 +2,7 @@
  * @author mrdoob / http://mrdoob.com/
  */
 
-import { PerspectiveCamera, Scene, WebGLRenderer } from './three.modules.js';
+import { PerspectiveCamera, Scene, WebGLRenderer } from '../node_modules/three/build/three.module.js';
 
 class ModelElement extends HTMLElement {
 

@@ -3,7 +3,7 @@
  */
 
 import { ModelElement } from './model.js';
-import { Box3, ObjectLoader } from './three.modules.js';
+import { Box3, ObjectLoader } from '../node_modules/three/build/three.module.js';
 
 class ThreeModelElement extends ModelElement {
 

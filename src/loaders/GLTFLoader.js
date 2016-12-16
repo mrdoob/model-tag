@@ -4,7 +4,7 @@
  * @author Tony Parisi / http://www.tonyparisi.com/
  */
 
-import * as THREE from '../three.modules.js';
+import * as THREE from '../../node_modules/three/build/three.module.js';
 
 var GLTFLoader = function( manager ) {
 
